@@ -20,17 +20,20 @@ using namespace std;
 class Station
 {
 private:
-	tm Transform(string);
+	tm Transform(string, string);
+	int GetDayOfMonth(int a);
 	struct Train {
 		int number;
-		tm date;
-		tm time;
+		tm date_time;
 		char station[20];
+		
 	};
+	void ShowDate(vector<Train>::iterator iter);
 	vector<Train>trains;//список поездов
 public:
     void AddTrain();//добавление поезда в вектор
     void ShowTrain(int num);//отображение конкретного поезда
 	void Show();//отображение всех поездов
+
 };
 
